@@ -13,6 +13,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
  * @since 22/05/2018
  */
 public class PlayerTest {
+	
 
     @Test
     public void pointsCanBeAddedToEachPlayer() {
