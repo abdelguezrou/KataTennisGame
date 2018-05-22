@@ -76,5 +76,16 @@ public class Player {
 	public void setGameScore(int gameScore) {
 		this.gameScore = gameScore;
 	}
+	
+	
+	public Boolean hasWonAgainst(Player otherPlayer) {
+        Integer advantageOverOtherPlayer = gameScore - otherPlayer.getGameScore();
+        return gameScore >= 4 && advantageOverOtherPlayer >= 2;
+    }
+
+    public Boolean hasAdvantageOver(Player otherPlayer) {
+        Integer advantageOverOtherPlayer = gameScore - otherPlayer.getGameScore();
+        return gameScore >= 4 && advantageOverOtherPlayer.equals(1);
+    }
 
 }
