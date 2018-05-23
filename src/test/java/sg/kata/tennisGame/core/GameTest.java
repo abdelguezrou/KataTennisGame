@@ -3,12 +3,11 @@ package sg.kata.tennisGame.core;
 import org.junit.Before;
 import org.junit.Test;
 
+import sg.kata.tennisGame.helper.PlayerHelper;
 import sg.kata.tennisGame.model.Player;
 
 import java.util.stream.IntStream;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
@@ -33,76 +32,71 @@ public class GameTest {
 
     @Test
     public void zeroShouldBeDescriptionForScore0() {
-        assertThat(p1, hasProperty("gameScore", is(0)));
-        assertThat(p2, hasProperty("gameScore", is(0)));
+    	assertEquals(0, p1.getGameScore());
+        assertEquals(0, p2.getGameScore());
+        
     }
 
-    @Test
-    public void fifteenShouldBeDescriptionForScore1() {
-        p2.winsPoint();
-        assertThat(p1, hasProperty("gameScore", is(0)));
-        assertThat(p2, hasProperty("gameScore", is(1)));
-    }
 
     @Test
     public void thirtyShouldBeDescriptionForScore2() {
-        p1.winsPoint();
-        p1.winsPoint();
-        p2.winsPoint();
-        assertThat(p1, hasProperty("gameScore", is(2)));
-        assertThat(p2, hasProperty("gameScore", is(1)));
+        PlayerHelper.winsPoint(p1);
+        PlayerHelper.winsPoint(p1);
+        PlayerHelper.winsPoint(p2);
+        assertEquals(2, p1.getGameScore());
+        assertEquals(1, p2.getGameScore());
     }
 
     @Test
     public void fortyShouldBeDescriptionForScore3() {
         IntStream.rangeClosed(1, 3).forEach((Integer) -> {
-                p1.winsPoint();
+        	PlayerHelper.winsPoint(p1);
         });
-        assertThat(p1, hasProperty("gameScore", is(3)));
-        assertThat(p2, hasProperty("gameScore", is(0)));
+        assertEquals(3, p1.getGameScore());
+        assertEquals(0, p2.getGameScore());
     }
 
     @Test
     public void advantageShouldBeDescriptionWhenLeastThreePointsHaveBeenScoredByEachSideAndPlayerHasOnePointMoreThanHisOpponent() {
         IntStream.rangeClosed(1, 3).forEach((Integer) -> {
-            p1.winsPoint();
+        	PlayerHelper.winsPoint(p1);
         });
         IntStream.rangeClosed(1, 4).forEach((Integer) -> {
-            p2.winsPoint();
+        	PlayerHelper.winsPoint(p2);
         });
-        assertThat(p1, hasProperty("gameScore", is(3)));
-        assertThat(p2, hasProperty("gameScore", is(4)));
+        assertEquals(3, p1.getGameScore());
+        assertEquals(4, p2.getGameScore());
     }
 
     @Test
     public void deuceShouldBeDescriptionWhenAtLeastThreePointsHaveBeenScoredByEachPlayerAndTheScoresAreEqual() {
         IntStream.rangeClosed(1, 3).forEach((Integer) -> {
-            p1.winsPoint();
+        	PlayerHelper.winsPoint(p1);
         });
         IntStream.rangeClosed(1, 3).forEach((Integer) -> {
-            p2.winsPoint();
+        	PlayerHelper.winsPoint(p2);
         });
-        assertThat(p1, hasProperty("gameScore", is(3)));
-        assertThat(p2, hasProperty("gameScore", is(3)));
+        assertEquals(3, p1.getGameScore());
+        assertEquals(3, p2.getGameScore());
         assertEquals("Game score : DEUCE", game.getScore());
-        p1.winsPoint();
+        PlayerHelper.winsPoint(p1);
         assertNotEquals("Game score : DEUCE", game.getScore());
-        p2.winsPoint();
+        PlayerHelper.winsPoint(p2);
         assertEquals("Game score : DEUCE", game.getScore());
     }
 
     @Test
     public void gameShouldBeWonByTheFirstPlayerToHaveWonAtLeastFourPointsInTotalAndWithAtLeastTwoPointsMoreThanTheOpponent() {
         IntStream.rangeClosed(1, 4).forEach((Integer) -> {
-            p1.winsPoint();
+        	PlayerHelper.winsPoint(p1);
         });
         IntStream.rangeClosed(1, 3).forEach((Integer) -> {
-            p2.winsPoint();
+        	PlayerHelper.winsPoint(p2);
         });
         
         assertNotEquals("Game score : player1 win the game", game.getScore());
         assertNotEquals("Game score : player1 win the game", game.getScore());
-        p1.winsPoint();
+        PlayerHelper.winsPoint(p1);
         assertEquals("Game score : player1 win the game", game.getScore());
     }
 

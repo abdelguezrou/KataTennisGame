@@ -1,6 +1,7 @@
 package sg.kata.tennisGame.core.score;
 
 
+import sg.kata.tennisGame.helper.PlayerHelper;
 import sg.kata.tennisGame.model.Player;
 
 /**
@@ -50,7 +51,7 @@ public class AdvantageScore extends AScore{
      * @return player in advantage
      */
     private Player playerInAdvantage() {
-        return player1.hasAdvantageOver(player2) ? player1 : player2;
+        return PlayerHelper.hasAdvantageOver(player1, player2) ? player1 : player2;
     }
 
 

@@ -1,5 +1,6 @@
 package sg.kata.tennisGame.core;
 
+import sg.kata.tennisGame.helper.PlayerHelper;
 import sg.kata.tennisGame.model.Player;
 
 
@@ -36,9 +37,9 @@ public class Set extends AStateScore {
 	
 	@Override
 	public String getScore() {
-		String score;
+		final String score;
 		if(hasWinner()) {
-			score = playerWithHighestScore().winsSet();
+			score = PlayerHelper.winsSet(playerWithHighestScore());
 			player1.setSetScore(0);
 			player2.setSetScore(0);
 			return "Set score : " + score;

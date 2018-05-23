@@ -34,52 +34,6 @@ public class Player {
 	}
 	
 	
-    /**
-     * If a player wins point increments the game score value
-     */
-	public void winsPoint() {
-		gameScore++;
-	}
-	
-	/**
-	 * Wining game declaration
-     * If a player wins a game increments the game score value
-     * @return the declaration of game wining
-     */
-	public String winsGame() {
-		setScore++;
-		return name + " win the game";
-	}
-
-	/**
-	 * Wining set declaration 
-     * @return the declaration of set wining
-	 */
-	public String winsSet() {
-		return name + " win the set and the match";
-	}
-	/**
-	 * has Won Against
-	 * @param otherPlayer player
-	 * @return true if player is the winner or false if not
-	 */
-	public Boolean hasWonAgainst(final Player otherPlayer) {
-        final Integer advantageOverOtherPlayer = gameScore - otherPlayer.getGameScore();
-        return gameScore >= 4 && advantageOverOtherPlayer >= 2;
-    }
-
-	
-	/**
-	 * Check if the player is in advantage
-	 * @param otherPlayer player
-	 * @return true if player is advantage else return false
-	 */
-    public Boolean hasAdvantageOver(final Player otherPlayer) {
-        final Integer advantageOverOtherPlayer = gameScore - otherPlayer.getGameScore();
-        return gameScore >= 4 && advantageOverOtherPlayer.equals(1);
-    }
-	
-	
 	public int getSetScore() {
 		return setScore;
 	}

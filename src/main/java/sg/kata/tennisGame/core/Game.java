@@ -15,6 +15,7 @@ import sg.kata.tennisGame.core.score.NullScore;
 import sg.kata.tennisGame.core.score.AScore;
 import sg.kata.tennisGame.core.score.TieScore;
 import sg.kata.tennisGame.core.score.WinScore;
+import sg.kata.tennisGame.helper.PlayerHelper;
 import sg.kata.tennisGame.model.Player;
 
 /**
@@ -58,7 +59,7 @@ public class Game extends AStateScore {
     
     @Override
 	public boolean hasWinner() {
-    	return player1.hasWonAgainst(player2) || player2.hasWonAgainst(player1);
+    	return PlayerHelper.hasWonAgainst(player1, player2) || PlayerHelper.hasWonAgainst(player2, player1);
 	}
 	
 	@Override

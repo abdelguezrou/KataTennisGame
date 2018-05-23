@@ -1,6 +1,7 @@
 package sg.kata.tennisGame.core.score;
 
 
+import sg.kata.tennisGame.helper.PlayerHelper;
 import sg.kata.tennisGame.model.Player;
 
 
@@ -31,7 +32,7 @@ public class WinScore extends AScore{
 
     @Override
     public Boolean isAppliable() {
-        return player1.hasWonAgainst(player2) || player2.hasWonAgainst(player1);
+        return PlayerHelper.hasWonAgainst(player1, player2) || PlayerHelper.hasWonAgainst(player2, player1);
     }
 
     @Override
@@ -39,8 +40,12 @@ public class WinScore extends AScore{
     	return "Game score : "+ playerWhoWon().getName()+" win the game";
     }
 
+    /**
+     * playerWhoWon
+     * @return the won player
+     */
     private Player playerWhoWon() {
-        return player1.hasWonAgainst(player2) ? player1 : player2;
+        return PlayerHelper.hasWonAgainst(player1, player2) ? player1 : player2;
     }
 
 }
