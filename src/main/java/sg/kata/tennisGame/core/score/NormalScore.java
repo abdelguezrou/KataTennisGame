@@ -13,7 +13,7 @@ import sg.kata.tennisGame.model.Player;
  * @author gabdel
  * @since 22/05/2018
  */
-public class NormalScore extends AScore{
+public class NormalScore extends AbstructScore{
 	
 	/**
 	 * NormalScore default constructor

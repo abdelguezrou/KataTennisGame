@@ -9,7 +9,7 @@ import sg.kata.tennisGame.model.Player;
  * @author gabdel
  * @since 22/05/2018
  */
-public class NullScore extends AScore{
+public class NullScore extends AbstructScore{
 	
 	/**
 	 * NullScore default constructor

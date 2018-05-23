@@ -10,7 +10,7 @@ import sg.kata.tennisGame.model.Player;
  * @author gabdel
  * @since 22/05/2018
  */
-public class DeuceScore extends AScore{
+public class DeuceScore extends AbstructScore{
 	
 	/**
 	 * DeuceScore default constructor

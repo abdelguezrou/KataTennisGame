@@ -4,11 +4,11 @@ import sg.kata.tennisGame.model.Player;
 
 /**
  * Represents a Match {@link Match} entity.
- * extend Abstract class StateScore {@link AStateScore}
+ * extend Abstract class StateScore {@link AbstructStateScore}
  * @author gabdel
  * @since 22/05/2018
  */
-public class Match extends AStateScore {
+public class Match extends AbstructStateScore {
 	
 	private Game game;
 	private Set set;

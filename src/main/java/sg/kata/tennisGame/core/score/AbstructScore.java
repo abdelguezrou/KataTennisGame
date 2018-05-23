@@ -4,12 +4,12 @@ import sg.kata.tennisGame.model.Player;
 
 
 /**
- * Represents an abstract class Score {@link AScore}
+ * Represents an abstract class Score {@link AbstructScore}
  * Define the Score of tennis entities
  * @author gabdel
  * @since 22/05/2018
  */
-public abstract class AScore {
+public abstract class AbstructScore {
 
     protected Player player1;
     protected Player player2;
@@ -19,7 +19,7 @@ public abstract class AScore {
      * @param player1 first player
      * @param player2 second player
      */
-    public AScore(Player player1, Player player2) {
+    public AbstructScore(Player player1, Player player2) {
         this.player1 = player1;
         this.player2 = player2;
     }

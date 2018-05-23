@@ -10,7 +10,7 @@ import sg.kata.tennisGame.model.Player;
  * @author gabdel
  * @since 22/05/2018
  */
-public class AdvantageScore extends AScore{
+public class AdvantageScore extends AbstructScore{
 	
 	/**
 	 * AdvantageScore default constructor

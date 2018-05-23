@@ -11,7 +11,7 @@ import sg.kata.tennisGame.model.Player;
  * @author gabdel
  * @since 22/05/2018
  */
-public class WinScore extends AScore{
+public class WinScore extends AbstructScore{
 
 	/**
 	 * WinScore default constructor

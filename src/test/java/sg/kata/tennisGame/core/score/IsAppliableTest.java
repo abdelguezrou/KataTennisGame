@@ -6,7 +6,7 @@ import org.junit.Test;
 import sg.kata.tennisGame.core.score.IsAppliable;
 import sg.kata.tennisGame.core.score.NormalScore;
 import sg.kata.tennisGame.core.score.NullScore;
-import sg.kata.tennisGame.core.score.AScore;
+import sg.kata.tennisGame.core.score.AbstructScore;
 import sg.kata.tennisGame.model.Player;
 
 import java.util.ArrayList;
@@ -32,7 +32,7 @@ public class IsAppliableTest {
     
     @Test
     public void shouldBeNullIfNotInitialized() {
-        assertNull(find(new ArrayList<AScore>(), new IsAppliable()));
+        assertNull(find(new ArrayList<AbstructScore>(), new IsAppliable()));
     }
     
     @Test
@@ -44,7 +44,7 @@ public class IsAppliableTest {
     * test score list
     * @return test list 
     */
-    private List<AScore> testScores() {
+    private List<AbstructScore> testScores() {
         Player player1 = null;
 		Player player2 = null;
 		return asList(

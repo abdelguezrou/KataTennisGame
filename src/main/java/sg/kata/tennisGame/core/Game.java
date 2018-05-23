@@ -12,7 +12,7 @@ import sg.kata.tennisGame.core.score.DeuceScore;
 import sg.kata.tennisGame.core.score.IsAppliable;
 import sg.kata.tennisGame.core.score.NormalScore;
 import sg.kata.tennisGame.core.score.NullScore;
-import sg.kata.tennisGame.core.score.AScore;
+import sg.kata.tennisGame.core.score.AbstructScore;
 import sg.kata.tennisGame.core.score.TieScore;
 import sg.kata.tennisGame.core.score.WinScore;
 import sg.kata.tennisGame.helper.PlayerHelper;
@@ -20,12 +20,12 @@ import sg.kata.tennisGame.model.Player;
 
 /**
  * Represents a game {@link Game} entity.
- * extend Abstract class StateScore {@link AStateScore}
+ * extend Abstract class StateScore {@link AbstructStateScore}
  * @author gabdel
  * @since 22/05/2018
  */
 
-public class Game extends AStateScore {
+public class Game extends AbstructStateScore {
 	
 	
 	/**
@@ -33,7 +33,7 @@ public class Game extends AStateScore {
 	 * 
 	 * @return list of possible scores
 	 */
-	 private List<AScore> possibleScores() {
+	 private List<AbstructScore> possibleScores() {
 	        return asList(
 	                new WinScore(player1, player2),
 	                new TieScore(player1, player2),
