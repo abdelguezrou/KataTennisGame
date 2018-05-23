@@ -9,7 +9,15 @@ import sg.kata.tennisGame.model.Player;
  * @author gabdel
  * @since 22/05/2018
  */
-public class NullScore extends Score{
+public class NullScore extends AScore{
+	
+	/**
+	 * NullScore default constructor
+	 */
+    private NullScore() {
+        //expected for sonar
+    	super(null, null);
+    }
 
 	/**
 	 * NullScore constructor

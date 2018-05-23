@@ -15,12 +15,19 @@ public class Player {
     private int setScore;
     
     /**
+	 * Default Constructor : for sonar
+	 */
+    public Player() {
+		//expected
+	}
+    
+    /**
 	 * Constructor
 	 * Creates a Player {@link Player} with specified name
 	 * @param name : player name 
 	 * initialize game score and set score values to 0
 	 */
-    public Player(String name) {
+    public Player(final String name) {
 		this.name = name;
 		this.gameScore = 0;
 		this.setScore = 0;
@@ -51,6 +58,26 @@ public class Player {
 	public String winsSet() {
 		return name + " win the set and the match";
 	}
+	/**
+	 * has Won Against
+	 * @param otherPlayer player
+	 * @return true if player is the winner or false if not
+	 */
+	public Boolean hasWonAgainst(final Player otherPlayer) {
+        final Integer advantageOverOtherPlayer = gameScore - otherPlayer.getGameScore();
+        return gameScore >= 4 && advantageOverOtherPlayer >= 2;
+    }
+
+	
+	/**
+	 * Check if the player is in advantage
+	 * @param otherPlayer player
+	 * @return true if player is advantage else return false
+	 */
+    public Boolean hasAdvantageOver(final Player otherPlayer) {
+        final Integer advantageOverOtherPlayer = gameScore - otherPlayer.getGameScore();
+        return gameScore >= 4 && advantageOverOtherPlayer.equals(1);
+    }
 	
 	
 	public int getSetScore() {
@@ -65,7 +92,7 @@ public class Player {
 		return name;
 	}
 
-	public void setName(String name) {
+	public void setName(final String name) {
 		this.name = name;
 	}
 
@@ -73,19 +100,8 @@ public class Player {
 		return gameScore;
 	}
 
-	public void setGameScore(int gameScore) {
+	public void setGameScore(final int gameScore) {
 		this.gameScore = gameScore;
 	}
 	
-	
-	public Boolean hasWonAgainst(Player otherPlayer) {
-        Integer advantageOverOtherPlayer = gameScore - otherPlayer.getGameScore();
-        return gameScore >= 4 && advantageOverOtherPlayer >= 2;
-    }
-
-    public Boolean hasAdvantageOver(Player otherPlayer) {
-        Integer advantageOverOtherPlayer = gameScore - otherPlayer.getGameScore();
-        return gameScore >= 4 && advantageOverOtherPlayer.equals(1);
-    }
-
 }

@@ -13,7 +13,15 @@ import sg.kata.tennisGame.model.Player;
  * @author gabdel
  * @since 22/05/2018
  */
-public class NormalScore extends Score{
+public class NormalScore extends AScore{
+	
+	/**
+	 * NormalScore default constructor
+	 */
+    private NormalScore() {
+        //expected for sonar
+    	super(null, null);
+    }
 
 	/**
 	 * NormalScore constructor

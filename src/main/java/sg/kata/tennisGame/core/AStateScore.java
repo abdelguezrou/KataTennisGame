@@ -3,12 +3,12 @@ package sg.kata.tennisGame.core;
 import sg.kata.tennisGame.model.Player;
 
 /**
- * Represents an abstract class StateScore {@link StateScore}
+ * Represents an abstract class StateScore {@link AStateScore}
  * Define the State Score of tennis entities
  * @author gabdel
  * @since 22/05/2018
  */
-public abstract class StateScore {
+public abstract class AStateScore {
 	
 	protected Player player1;
 	protected Player player2;

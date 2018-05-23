@@ -12,19 +12,19 @@ import sg.kata.tennisGame.core.score.DeuceScore;
 import sg.kata.tennisGame.core.score.IsAppliable;
 import sg.kata.tennisGame.core.score.NormalScore;
 import sg.kata.tennisGame.core.score.NullScore;
-import sg.kata.tennisGame.core.score.Score;
+import sg.kata.tennisGame.core.score.AScore;
 import sg.kata.tennisGame.core.score.TieScore;
 import sg.kata.tennisGame.core.score.WinScore;
 import sg.kata.tennisGame.model.Player;
 
 /**
  * Represents a game {@link Game} entity.
- * extend Abstract class StateScore {@link StateScore}
+ * extend Abstract class StateScore {@link AStateScore}
  * @author gabdel
  * @since 22/05/2018
  */
 
-public class Game extends StateScore {
+public class Game extends AStateScore {
 	
 	
 	/**
@@ -32,9 +32,8 @@ public class Game extends StateScore {
 	 * 
 	 * @return list of possible scores
 	 */
-	 private List<Score> possibleScores() {
+	 private List<AScore> possibleScores() {
 	        return asList(
-	                
 	                new WinScore(player1, player2),
 	                new TieScore(player1, player2),
 	                new DeuceScore(player1, player2),
@@ -64,11 +63,7 @@ public class Game extends StateScore {
 	
 	@Override
 	public Player playerWithHighestScore() {
-		if(player1.getGameScore() > player2.getGameScore()) {
-			return player1;
-		}
-		else
-			return player2;
+		return (player1.getGameScore() > player2.getGameScore()) ? player1: player2;
 	}
 
 	

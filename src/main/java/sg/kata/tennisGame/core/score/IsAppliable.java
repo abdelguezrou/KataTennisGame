@@ -2,9 +2,13 @@ package sg.kata.tennisGame.core.score;
 
 import org.apache.commons.collections4.Predicate;
 
-public class IsAppliable implements Predicate<Score> {
+public class IsAppliable implements Predicate<AScore> {
 
-    public boolean evaluate(final Score score) {
+	/**
+	 * evaluate Score
+	 * @return true if score is appliable or false if else
+	 */
+    public boolean evaluate(final AScore score) {
         return score.isAppliable();
     }
 

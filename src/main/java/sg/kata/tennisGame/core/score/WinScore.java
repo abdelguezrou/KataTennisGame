@@ -10,8 +10,16 @@ import sg.kata.tennisGame.model.Player;
  * @author gabdel
  * @since 22/05/2018
  */
-public class WinScore extends Score{
+public class WinScore extends AScore{
 
+	/**
+	 * WinScore default constructor
+	 */
+    private WinScore() {
+        //expected for sonar
+    	super(null, null);
+    }
+	
 	/**
 	 * WinScore constructor
 	 * @param player1 first player

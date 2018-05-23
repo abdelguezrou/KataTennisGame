@@ -10,7 +10,15 @@ import sg.kata.tennisGame.model.Player;
  * @author gabdel
  * @since 22/05/2018
  */
-public class TieScore extends Score{
+public class TieScore extends AScore{
+	
+	/**
+	 * TieScore default constructor
+	 */
+    private TieScore() {
+        //expected for sonar
+    	super(null, null);
+    }
 
 	/**
 	 * TieScore constructor

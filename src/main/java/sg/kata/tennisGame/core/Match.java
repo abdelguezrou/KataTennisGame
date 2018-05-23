@@ -4,11 +4,11 @@ import sg.kata.tennisGame.model.Player;
 
 /**
  * Represents a Match {@link Match} entity.
- * extend Abstract class StateScore {@link StateScore}
+ * extend Abstract class StateScore {@link AStateScore}
  * @author gabdel
  * @since 22/05/2018
  */
-public class Match extends StateScore {
+public class Match extends AStateScore {
 	
 	private Game game;
 	private Set set;
@@ -30,16 +30,12 @@ public class Match extends StateScore {
 
 	@Override
 	public boolean hasWinner() {
-		if(set.hasWinner())
-			return true;
-		return false;
+		return set.hasWinner() ? true : false;
 	}
 
 	@Override
 	public Player playerWithHighestScore() {
-		if(player1.getSetScore() == player2.getSetScore())
-			return game.playerWithHighestScore();
-		return set.playerWithHighestScore();
+		return (player1.getSetScore() == player2.getSetScore()) ? game.playerWithHighestScore() : set.playerWithHighestScore();
 	}
 	
 	@Override
