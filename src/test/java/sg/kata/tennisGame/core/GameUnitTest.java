@@ -16,21 +16,6 @@ public class GameUnitTest {
 	private Player player2 = new Player("player2");
 	private Game tennisGame = new Game(player1,player2);
 
-	@Test
-	public void testGameScoreCorrectFromat() {
-		
-		String tennisScore = tennisGame.tennisScore(3);
-		assertEquals("40", tennisScore);
-		
-		tennisScore = tennisGame.tennisScore(2);
-		assertEquals("30", tennisScore);
-		
-		tennisScore = tennisGame.tennisScore(1);
-		assertEquals("15", tennisScore);
-		
-		tennisScore = tennisGame.tennisScore(0);
-		assertEquals("0", tennisScore);
-	}
 	
 	@Test
 	public void testHasGameWinner() {
@@ -104,11 +89,6 @@ public class GameUnitTest {
 		assertEquals("Game score : ADV player2", tennisGame.getScore());
 	}
 	
-	@Test
-	public void testGameIsTieBreak() {
-		createTieBreakScore(0, 0);		
-		assertEquals(true, tennisGame.isTieBreakActivated());
-	}
 	
 	@Test
 	public void testPlayersWonFourPointsEachInTieBreak() {
@@ -125,11 +105,8 @@ public class GameUnitTest {
 		player1.setSetScore(6);
 		player2.setSetScore(6);
 		
-		for (int i = 0; i<pointsWonByPlayerOne; i++)
-			player1.winsPoint();
-		
-		for (int j = 0; j<pointsWonByPlayerTwo; j++)
-			player2.winsPoint();
+		player1.setGameScore(pointsWonByPlayerOne);
+		player2.setGameScore(pointsWonByPlayerTwo);
 	}
 
 }

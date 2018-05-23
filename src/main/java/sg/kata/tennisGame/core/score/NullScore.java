@@ -25,4 +25,8 @@ public class NullScore extends Score{
         return true;
     }
 
+    @Override
+    public String toString() {
+        return "";
+    }
 }

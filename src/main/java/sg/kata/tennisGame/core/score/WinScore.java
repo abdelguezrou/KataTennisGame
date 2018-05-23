@@ -24,8 +24,15 @@ public class WinScore extends Score{
     @Override
     public Boolean isAppliable() {
         return player1.hasWonAgainst(player2) || player2.hasWonAgainst(player1);
-			
     }
 
+    @Override
+    public String toString() {
+    	return "Game score : "+ playerWhoWon().getName()+" win the game";
+    }
+
+    private Player playerWhoWon() {
+        return player1.hasWonAgainst(player2) ? player1 : player2;
+    }
 
 }
